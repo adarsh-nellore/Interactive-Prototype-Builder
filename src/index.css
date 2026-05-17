@@ -1,21 +1,65 @@
-/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inconsolata:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap');
 
-/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
-
+/* Peer Design System tokens */
 @layer base {
+  :root {
+    /* Surface scale */
+    --color-ink: #1A1B1F;
+    --color-muted: #525252;
+    --color-faint: #858585;
+    --color-faintest: #A6A6A6;
+    --color-hairline: #E9E9E9;
+    --color-hairline-strong: #D5DDE3;
+    --color-soft: #F6F6F6;
+    --color-stripe: #FAFBFC;
+    --color-paper: #FFFFFF;
+    /* Brand + semantic */
+    --color-coral: #FF4E49;
+    --color-coral-soft: #FFF5F4;
+    --color-green: #43DD9C;
+    --color-green-soft: #E4F6EC;
+    --color-gold: #F6A600;
+    --color-gold-soft: #FFF6E0;
+    --color-info: #4FA8E4;
+    --color-accent-indigo: #3935FF;
+    /* Shadows */
+    --shadow-card: 0 1px 2px rgb(15 18 22 / 0.04);
+    --shadow-pop: 0 1px 2px rgb(15 18 22 / 0.04), 0 12px 32px -12px rgb(15 18 22 / 0.10);
+    --shadow-modal: 0 24px 60px -24px rgb(15 18 22 / 0.20), 0 8px 24px -8px rgb(15 18 22 / 0.08);
+    /* Radii */
+    --radius-xs: 3px;
+    --radius-sm: 5px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-card: 12px;
+  }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "cv02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-paper);
+    color: var(--color-ink);
   }
   .font-mono {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inconsolata', ui-monospace, "SF Mono", Menlo, monospace;
   }
-  .font-serif {
-    font-family: 'Merriweather', serif;
+  .font-display {
+    font-family: 'Fraunces', 'Inter', Georgia, serif;
   }
 }
+/* Scrollbar styling */
+.scroll-tame {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(15 18 22 / 0.16) transparent;
+}
+.scroll-tame::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-tame::-webkit-scrollbar-thumb {
+  background: rgb(15 18 22 / 0.16);
+  border-radius: 9999px;
+}
+.scroll-tame::-webkit-scrollbar-track { background: transparent; }
